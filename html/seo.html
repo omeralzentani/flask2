@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>turky_scrapping</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1 {font-family: "Montserrat", sans-serif}
+img {margin-bottom: -7px}
+.w3-row-padding img {margin-bottom: 12px}
+</style>
+
+
+
+
+</head>
+
+
+
+
+
+<body>
+
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+
+<!-- Header -->
+<div class="w3-opacity">
+<span class="w3-button w3-xxlarge w3-white w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+<div class="w3-clear"></div>
+<header class="w3-center w3-margin-bottom">
+  <p><b>Cyber 7 </b></p>
+
+</header>
+</div>
+<div class="container">
+  <div class="row">
+ <div class="col-sm-4">
+<center>
+
+    <form action="" method="post">
+	<div class="form-group">
+        <input
+            type="text"
+            placeholder="موضوع البحث"
+            name="search"
+            value="{{request.form.search}}"
+            required
+            />
+        <input
+            type="number"
+            placeholder="عدد المواقع"
+            name="page"
+            value="{{request.form.page}}"
+            required
+			    />
+    
+
+        
+        <input  type="submit" name="submit_button" value="استخراج الكلمات المفتاحية">
+		</div>   
+
+        
+
+
+</center>
+ </div >
+ </div >
+
+ </div >
+
+<center>
+
+           <textarea id="w3review" name="w3review" rows="4" cols="50">
+		   
+{{value|safe}}
+</textarea>
+ <div class="form-group">
+ <input type="submit" name="submit_button" value="الكلمة التالية">	
+
+<input   type="submit" name="submit_button" value="اقتراحات">	
+<input   type="submit" name="submit_button" value="رجوع">	
+
+
+ </div>
+ <div class="form-group">
+ <input type="submit" name="submit_button" value="extract">
+ <input type="submit" name="submit_button" value="تحميل">
+</div >
+
+
+
+
+
+
+
+
+
+</center>	
+<center>
+
+
+</form>
+
+</center>	
+	
+	
+	
+	
+	
+	
+	
+	
+
+{% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+{% endfor %} 
+
+ <h1>{{value|safe}}</h1> 
+
+</body>
+</html>
